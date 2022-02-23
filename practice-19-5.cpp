@@ -12,5 +12,8 @@ public:
 };
 int main()
 {
-    std::cout << "Hello World!\n";
+    Animal* Zoo[1];
+    Animal lion;
+    Zoo[0] = &lion;
+    Zoo[0]->Voice();
 }
