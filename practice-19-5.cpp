@@ -19,13 +19,38 @@ public:
         std::cout << "Woof!" << "\n";
     }
 };
+
+class Cat : public Animal
+{
+public:
+    void Voice() override
+    {
+        std::cout << "Meeooow!" << "\n";
+    }
+};
+
+class Lion : public Animal
+{
+public:
+    void Voice() override
+    {
+        std::cout << "Rrrooooar!" << "\n";
+    }
+};
 int main()
 {
-    Animal* Zoo[2];
-    Animal lion;
+    const int N = 3;
+    Animal* Zoo[N];
     Dog dog;
+    Cat cat;
+    Lion lion;
+
     Zoo[0] = &lion;
     Zoo[1] = &dog;
-    Zoo[0]->Voice();
-    Zoo[1]->Voice();
+    Zoo[2] = &cat;
+
+    for (int i = 0; i < N; ++i)
+    {
+        Zoo[i]->Voice();
+    }
 }
